@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-type" content="text/html; charset=UTF-8" />
+    <title>Meter polyfill</title>
+    <link rel="stylesheet" type="text/css" href="meter-polyfill.css" />
+    <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
+    <script type="text/javascript" src="meter-polyfill.js"></script>
+  </head>
+  <body>
+<table style="width: 100%">
+<tr>
+<td style="width: 10%">Normal</td>
+<td style="width: 90%"><meter name="some_meter" min="0.6" value="4.89" max="5.09"></meter></td>
+</tr>
+<tr>
+<td>Too High</td>
+<td><meter name="some_meter_high" min="0" high="8" value="9" max="10"></meter></td>
+</tr>
+<tr>
+<td>Too Low</td>
+<td><meter name="some_meter_low" min="0" low="3" value="2" max="10"></meter></td>
+</tr>
+<tr>
+<td>Exact Optimum</td>
+<td><meter name="some_meter_optimal" min="0" value="5" optimum=5 max="10"></meter></td>
+</tr>
+<tr>
+<td>Value greater than Max</td>
+<td><meter name="some_meter_max_break" min="4" value="11" max="10"></meter></td>
+</tr>
+<tr>
+<td>Value lesser than Min</td>
+<td><meter name="some_meter_min_break" min="4" value="0" max="10"></meter></td>
+</tr>
+<tr>
+<td>Changable</td>
+<td><meter name="some_meter_changable" min="0" value="5" max="10"></meter><br />
+<button onclick="$('meter[name=\'some_meter_changable\']')[0].setAttribute('value', 7); return false;">Change</button></td>
+</tr>
+</table>
+</body>
+</html>

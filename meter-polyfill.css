@@ -1,0 +1,28 @@
+meter div.meter-frame {
+  height: 1em;
+  width: 100%;
+  padding: 2px;
+  border: 1px solid black;
+  background-color: white;
+}
+
+meter div.meter-bar {
+  height: 1em;
+  border: none;
+  background-color: #009900;
+}
+
+meter div.meter-bar.meter-low {
+  border: none;
+  background-color: #0000FF;
+}
+
+meter div.meter-bar.meter-high {
+  border: none;
+  background-color: #FF0000;
+}
+
+meter div.meter-bar.meter-optimal {
+  border: none;
+  background-color: #FFFF00;
+}
