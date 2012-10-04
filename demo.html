@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-type" content="text/html; charset=UTF-8" />
+    <title>Meter polyfill</title>
+    <meta name="author" content="Jonathan Stipe" />
+    <meta name="copyright" content="&copy; 2012 Jonathan Stipe" />
+    <link rel="stylesheet" type="text/css" href="meter-polyfill.css" />
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+    <script type="text/javascript" src="meter-polyfill.js"></script>
+    <script type="text/javascript">
+//<![CDATA[
+$(function(){
+  var trElem = document.createElement("tr"),
+      tdElem1 = document.createElement("td"),
+      tdElem2 = document.createElement("td"),
+      meterElem = document.createElement("meter");
+  meterElem.setAttribute("name", "meterGenerated");
+  meterElem.setAttribute("min", "0");
+  meterElem.setAttribute("max", "10");
+  meterElem.setAttribute("value", "6");
+  tdElem1.appendChild(document.createTextNode("Dynamically generated element:"));
+  tdElem2.appendChild(meterElem);
+  trElem.appendChild(tdElem1);
+  trElem.appendChild(tdElem2);
+  $("table").append(trElem);
+  $(meterElem).html5Meter();
+  
+  var intervalID = window.setInterval(function(){
+    var $meterElem = $("meter[name='some_meter_changeable']");
+    var val = parseInt($meterElem.attr("value"), 10)
+    if (val >= 50) {
+      $meterElem.attr("value", 0);
+    } else {
+      $meterElem.attr("value", val + 1);
+    }
+  }, 200);
+});
+//]]>
+    </script>
+</head>
+<body>
+  <table style="width: 100%">
+    <tr>
+      <td style="width: 10%">Normal</td>
+      <td style="width: 90%"><meter name="some_meter" min="0.6" value="4.89" max="5.09"></meter></td>
+    </tr>
+    <tr>
+      <td>Too High</td>
+      <td><meter name="some_meter_high" min="0" high="8" value="9" max="10"></meter></td>
+    </tr>
+    <tr>
+      <td>Too Low</td>
+      <td><meter name="some_meter_low" min="0" low="3" value="2" max="10"></meter></td>
+    </tr>
+    <tr>
+      <td>Exact Optimum</td>
+      <td><meter name="some_meter_optimal" min="0" value="5" optimum=5 max="10"></meter></td>
+    </tr>
+    <tr>
+      <td>Value greater than Max</td>
+      <td><meter name="some_meter_max_break" min="4" value="11" max="10"></meter></td>
+    </tr>
+    <tr>
+      <td>Value lesser than Min</td>
+      <td><meter name="some_meter_min_break" min="4" value="0" max="10"></meter></td>
+    </tr>
+    <tr>
+      <td>Changeable</td>
+      <td><meter name="some_meter_changeable" min="0" value="5" max="50"></meter></td>
+    </tr>
+  </table>
+</body>
+</html>
