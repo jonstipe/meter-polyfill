@@ -1,28 +1,102 @@
+/*
+HTML5 Meter polyfill | Jonathan Stipe | https://github.com/jonstipe/meter-polyfill
+*/
 meter div.meter-frame {
   height: 1em;
   width: 100%;
   padding: 2px;
   border: 1px solid black;
   background-color: white;
-}
-
+  background: #999999;
+  /* Old browsers */
+  background: -moz-linear-gradient(top, #999999 0%, #555555 65%, #cccccc 100%);
+  /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #999999), color-stop(65%, #555555), color-stop(100%, #cccccc));
+  /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top, #999999 0%, #555555 65%, #cccccc 100%);
+  /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top, #999999 0%, #555555 65%, #cccccc 100%);
+  /* Opera 11.10+ */
+  background: -ms-linear-gradient(top, #999999 0%, #555555 65%, #cccccc 100%);
+  /* IE10+ */
+  background: linear-gradient(to bottom, #999999 0%, #555555 65%, #cccccc 100%);
+  /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FF999999', endColorstr='#FFCCCCCC', GradientType=0);
+  /* IE6-9 */ }
 meter div.meter-bar {
   height: 1em;
   border: none;
   background-color: #009900;
-}
-
-meter div.meter-bar.meter-low {
-  border: none;
-  background-color: #0000FF;
-}
-
-meter div.meter-bar.meter-high {
-  border: none;
-  background-color: #FF0000;
-}
-
-meter div.meter-bar.meter-optimal {
-  border: none;
-  background-color: #FFFF00;
-}
+  background: #009900;
+  /* Old browsers */
+  background: -moz-linear-gradient(top, #009900 0%, lime 35%, #003300 100%);
+  /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #009900), color-stop(35%, lime), color-stop(100%, #003300));
+  /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top, #009900 0%, lime 35%, #003300 100%);
+  /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top, #009900 0%, lime 35%, #003300 100%);
+  /* Opera 11.10+ */
+  background: -ms-linear-gradient(top, #009900 0%, lime 35%, #003300 100%);
+  /* IE10+ */
+  background: linear-gradient(to bottom, #009900 0%, lime 35%, #003300 100%);
+  /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FF009900', endColorstr='#FF003300', GradientType=0);
+  /* IE6-9 */ }
+  meter div.meter-bar.meter-low {
+    border: none;
+    background-color: #0000FF;
+    background: blue;
+    /* Old browsers */
+    background: -moz-linear-gradient(top, blue 0%, #6699ff 35%, #000066 100%);
+    /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, blue), color-stop(35%, #6699ff), color-stop(100%, #000066));
+    /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, blue 0%, #6699ff 35%, #000066 100%);
+    /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top, blue 0%, #6699ff 35%, #000066 100%);
+    /* Opera 11.10+ */
+    background: -ms-linear-gradient(top, blue 0%, #6699ff 35%, #000066 100%);
+    /* IE10+ */
+    background: linear-gradient(to bottom, blue 0%, #6699ff 35%, #000066 100%);
+    /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FF0000FF', endColorstr='#FF000066', GradientType=0);
+    /* IE6-9 */ }
+  meter div.meter-bar.meter-high {
+    border: none;
+    background-color: #FF0000;
+    background: #990000;
+    /* Old browsers */
+    background: -moz-linear-gradient(top, #990000 0%, red 35%, #330000 100%);
+    /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #990000), color-stop(35%, red), color-stop(100%, #330000));
+    /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, #990000 0%, red 35%, #330000 100%);
+    /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top, #990000 0%, red 35%, #330000 100%);
+    /* Opera 11.10+ */
+    background: -ms-linear-gradient(top, #990000 0%, red 35%, #330000 100%);
+    /* IE10+ */
+    background: linear-gradient(to bottom, #990000 0%, red 35%, #330000 100%);
+    /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FF990000', endColorstr='#FF330000', GradientType=0);
+    /* IE6-9 */ }
+  meter div.meter-bar.meter-optimal {
+    border: none;
+    background-color: #FFFF00;
+    background: #cccc00;
+    /* Old browsers */
+    background: -moz-linear-gradient(top, #cccc00 0%, yellow 35%, #333300 100%);
+    /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #cccc00), color-stop(35%, yellow), color-stop(100%, #333300));
+    /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, #cccc00 0%, yellow 35%, #333300 100%);
+    /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top, #cccc00 0%, yellow 35%, #333300 100%);
+    /* Opera 11.10+ */
+    background: -ms-linear-gradient(top, #cccc00 0%, yellow 35%, #333300 100%);
+    /* IE10+ */
+    background: linear-gradient(to bottom, #cccc00 0%, yellow 35%, #333300 100%);
+    /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFCCCC00', endColorstr='#FF333300', GradientType=0);
+    /* IE6-9 */ }
